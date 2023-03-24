@@ -8,10 +8,11 @@ formatters.setup {
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "gopls" })
 
 local lsp_manager = require "lvim.lsp.manager"
-lsp_manager.setup("golangci_lint_ls", {
-  on_init = require("lvim.lsp").common_on_init,
-  capabilities = require("lvim.lsp").common_capabilities(),
-})
+
+-- lsp_manager.setup("golang_ci_lint", {
+--   on_init = require("lvim.lsp").common_on_init,
+--   capabilities = require("lvim.lsp").common_capabilities(),
+-- })
 
 lsp_manager.setup("gopls", {
   on_attach = function(client, bufnr)
@@ -24,6 +25,7 @@ lsp_manager.setup("gopls", {
     gopls = {
       usePlaceholders = true,
       gofumpt = true,
+      staticcheck =true,
       codelenses = {
         generate = false,
         gc_details = true,
@@ -34,20 +36,23 @@ lsp_manager.setup("gopls", {
   },
 })
 
-local status_ok, gopher = pcall(require, "gopher")
+---@diagnostic disable-next-line: unused-local
+local status_ok, go_nvim = pcall(require, "go")
 if not status_ok then
   return
 end
 
-gopher.setup {
-  commands = {
-    go = "go",
-    gomodifytags = "gomodifytags",
-    gotests = "gotests",
-    impl = "impl",
-    iferr = "iferr",
-  },
-}
+go_nvim.setup()
+
+-- gopher.setup {
+--   commands = {
+--     go = "go",
+--     gomodifytags = "gomodifytags",
+--     gotests = "gotests",
+--     impl = "impl",
+--     iferr = "iferr",
+--   },
+-- }
 
 ------------------------
 -- Language Key Mappings

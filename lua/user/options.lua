@@ -1,11 +1,18 @@
 ------------------------------------------------------------------
 -- Options
 ------------------------------------------------------------------
-
-lvim.colorscheme = "minimal-base16"
 lvim.log.level = "warn"
 
-lvim.builtin.alpha.active = true
+-- Load the colorscheme
+lvim.colorscheme = "tokyodark"
+
+-- theme config
+vim.g.tokyodark_transparent_background = false
+vim.g.tokyodark_enable_italic_comment = true
+vim.g.tokyodark_enable_italic = true
+vim.g.tokyodark_color_gamma = "1.0"
+
+lvim.builtin.alpha.active = false
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
@@ -14,7 +21,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 local options = {
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-  cmdheight = 0, -- more space in the neovim command line for displaying messages
+  cmdheight = 2, -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file

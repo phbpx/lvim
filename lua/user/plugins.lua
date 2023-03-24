@@ -3,8 +3,12 @@
 ------------------------------------------------------------------
 
 lvim.plugins = {
-  { "yazeed1s/minimal.nvim" },
-  { "olexsmir/gopher.nvim" },
+  { "tiagovla/tokyodark.nvim" },
+  { "sainnhe/gruvbox-material" },
+  { "sainnhe/everforest" },
+  { "navarasu/onedark.nvim" },
+  { "ray-x/go.nvim" },
+  { "ray-x/guihua.lua" },
   { "leoluz/nvim-dap-go" },
   { "mfussenegger/nvim-dap-python" },
   { "lvimuser/lsp-inlayhints.nvim" },
